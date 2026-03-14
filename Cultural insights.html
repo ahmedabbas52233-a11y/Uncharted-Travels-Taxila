@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Travel, Taxila, Tourism, Cultural Insights, History">
+    <meta name="description" content="Uncharted Travels - Cultural Insights of Taxila">
+    <title>Cultural Insights - Uncharted Travel</title>
+    <link rel="icon" type="image/png" href="/htmlpictures/favicon-32x32.png">
+    <!-- Added Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4e1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Typography Fix */
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            min-height: 70vh;
+            /* Height for Hero */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('htmlpictures/cover-image-3-3-1024x444.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            background-color: rgba(51, 51, 51, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo Link Wrapper */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+
+        nav img {
+            width: 70px;
+            height: auto;
+            border-radius: 50% 20% / 10% 40%;
+        }
+
+        nav h1 {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 5px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover {
+            color: #ffd700;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .text-box {
+            width: 90%;
+            max-width: 800px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+        }
+
+        .text-box h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .text-box p {
+            font-size: 20px;
+            color: #ddd;
+        }
+
+        /* Content Section Styling */
+        .section-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-card h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            border-bottom: 2px solid #ffd700;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Grid for Sites Section */
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .site-item {
+            background: #fdfdfd;
+            border-left: 5px solid #ffd700;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .site-item h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: white;
+            border-top: 5px solid #ffd700;
+        }
+
+        .footer-column {
+            flex: 1 1 250px;
+            margin: 20px;
+        }
+
+        footer h3,
+        footer h4 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        footer p,
+        footer address {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        footer input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: none;
+        }
+
+        footer input[type="submit"] {
+            background: #ffd700;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            padding: 8px 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            .text-box h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <!-- Fix: Single link for Logo and Title. Removed "Home" link. -->
+            <a href="Index.html" class="nav-left">
+                <img src="/htmlpictures/Logo1.png" alt="Uncharted Travels Logo">
+                <h1>Uncharted Travel</h1>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="Historical Sites.html">Historical Sites</a></li>
+                <li><a href="Cultural insights.html">Cultural Insights</a></li>
+                <li><a href="Travel Tips.html">Travel Tips</a></li>
+                <li><a href="About us.html">About us</a></li>
+                <li><a href="Contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Added Hero Section -->
+        <div class="hero-section">
+            <div class="text-box">
+                <h1>Cultural Insights</h1>
+                <p>Discover the rich traditions, art, and history of the ancient Taxila civilization.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="overview" class="section-card">
+            <h2>Historical Overview</h2>
+            <p>With a history spanning more than 2,500 years, Taxila is among the oldest urban communities in the world.
+                Especially under the Achaemenid Empire (6th-4th centuries BCE), when it developed into a hub for trade
+                and research, it was an essential center of learning and culture.</p>
+            <p>With one of the world's first universities, Taxila was further solidified as a major center of learning
+                throughout the Mauryan Empire (4th-2nd century BCE). Under Indo-Greek and Kushan governance, the city
+                flourished further, fostering a distinctive fusion of philosophical and artistic concepts.</p>
+        </section>
+
+        <section id="influences" class="section-card">
+            <h2>Cultural Influences & Artifacts</h2>
+            <p>Taxila's advantageous location at the intersection of trade routes made the mingling of various cultural
+                elements easier. The region was greatly impacted by the arrival of Buddhism in the third century BCE,
+                which resulted in the construction of monastic complexes and stupas.</p>
+            <p>Greek influences can be seen in Hellenistic art and architecture, particularly during the Indo-Greek era.
+                The urban landscape of Taxila was significantly shaped by Persian cultural characteristics, ranging from
+                architectural features to administrative practices.</p>
+        </section>
+
+        <section id="sites" class="section-card">
+            <h2>Key Archaeological Sites</h2>
+            <div class="sites-grid">
+                <div class="site-item">
+                    <h3>Taxila Museum</h3>
+                    <p>Showcases an extensive collection of artifacts, including sculptures, coins, and pottery spanning
+                        various periods of Taxila's history.</p>
+                </div>
+                <div class="site-item">
+                    <h3>Dharmarajika Stupa</h3>
+                    <p>One of the oldest stupas in Taxila, believed to contain relics of the Buddha. It reflects early
+                        Buddhist architectural style.</p>
+                </div>
+                <div class="site-item">
+                    <h3>Sirkap & Jaulian</h3>
+                    <p>An ancient city exhibiting remnants of Greco-Buddhist architecture. Jaulian features
+                        well-preserved stupas and monastic cells.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="practices" class="section-card">
+            <h2>Cultural Practices & Traditions</h2>
+            <p>The historical background of Taxila is deeply ingrained in its cultural customs. The community's agrarian
+                lifestyle and Buddhist background are reflected in festivals like Vesak, which commemorates the birth of
+                Buddha, and regional harvest celebrations.</p>
+            <p>The region's creative heritage is preserved through traditional dance and music, which are frequently
+                performed during religious festivals. Local artists are still practicing their profession, especially in
+                weaving and ceramics.</p>
+        </section>
+
+        <section id="art" class="section-card">
+            <h2>Art and Craft</h2>
+            <p>The region gave rise to the Gandhara art style, which is distinguished by its distinctive fusion of
+                Buddhist, Indian, and Greek artistic traditions. This style is especially well-known for its finely
+                carved statues of Buddha and Bodhisattvas, which frequently include Hellenistic characteristics.</p>
+            <p>Textiles, ceramics, and woodworking are examples of local handicrafts that showcase Taxila's artistic
+                legacy. Many craftspeople continue to work in these old fields, guaranteeing that antiquated methods and
+                designs are maintained.</p>
+        </section>
+
+        <section id="modern" class="section-card">
+            <h2>Preservation & Sustainable Tourism</h2>
+            <p>Modernity and traditional customs coexist in the thriving town of Taxila today. Both residents and
+                visitors are drawn to the ongoing celebration of cultural festivals.</p>
+            <p>The significance of conserving the area's history and culture is emphasized by educational
+                establishments. Because tourists are drawn to the museums and archaeological sites, the tourism industry
+                is vital to the local economy. The preservation of Taxila's cultural legacy for upcoming generations is
+                guaranteed by initiatives to support sustainable tourism.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-column">
+            <h3>Get latest tour updates</h3>
+            <form action="/submit_form" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <p>
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">Instagram</a>
+            </p>
+            <p style="color:#fff; margin-top:10px;">UnchartedTravels.pk 2024. All rights reserved.</p>
+        </div>
+        <div class="footer-column">
+            <address>
+                <h4>Uncharted Travels Private Limited</h4>
+                <p>123 Heritage Street, Taxila, Pakistan</p>
+                <p><strong>P:</strong> +92 30 xx xx xx xx</p>
+                <p><strong>E:</strong> <a href="mailto:hello@UnchartedTravels.pk">hello@UnchartedTravels.pk</a></p>
+            </address>
+        </div>
+    </footer>
+</body>
+
+</html>

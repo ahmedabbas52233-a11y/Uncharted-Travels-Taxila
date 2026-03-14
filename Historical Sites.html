@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uncharted Travels - Discover the Ancient City of Taxila">
+    <title>Historical Sites - Uncharted Travel</title>
+    <link rel="icon" href="/htmlpictures/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #faf4e1;
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        .header {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+            url(htmlpictures/cover-image-3-3-1024x444.jpg);
+            position: relative;
+            display: flex;
+            flex-direction: column; /* Stacks Nav and Hero Text */
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            background-color: rgba(51, 51, 51, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap; 
+        }
+
+        /* Container for Logo + Title */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        nav img {
+            width: 70px;
+            height: auto;
+            border-radius: 50% 20% / 10% 40%;
+        }
+        
+        nav h1 {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin: 0 5px;
+        }
+        
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        
+        .nav-links li a:hover {
+            color: #ffd700;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Hero Section Text */
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(0,0,0,0.4); /* Slight background for readability */
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+        }
+        
+        .text-box h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 18px;
+            color: #ddd;
+        }
+        
+        /* Buttons */
+        .head-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 12px 30px;
+            font-size: 14px;
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        
+        .head-btn:hover {
+            background: #ffd700;
+            color: #000;
+            border-color: #ffd700;
+        }
+
+        /* Layout Containers */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 2px solid #ffd700;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p { font-size: 18px; margin-bottom: 15px; }
+        li { font-size: 18px; margin-bottom: 10px; }
+
+        /* Image Gallery Grid */
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            flex: 1 1 300px; /* Grow, shrink, base 300px */
+            max-width: 400px;
+            height: 250px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5%;
+            border-top: 5px solid #ffd700;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-column {
+            flex: 1 1 250px;
+            margin-bottom: 20px;
+        }
+        
+        footer h3 {
+            color: #ffd700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        footer p, footer a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li { margin-bottom: 8px; }
+        footer input, footer textarea { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+        footer button, footer input[type="submit"] { background: #ffd700; color: #000; border: none; padding: 10px 20px; cursor: pointer; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            .nav-left { margin-bottom: 10px; }
+            .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
+            .text-box h1 { font-size: 32px; }
+            .text-box { width: 95%; padding: 20px; }
+        }
+    </style>        
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <!-- Fix: Wrapped Logo and Title in ONE link. Removed "Home" link from menu. -->
+            <a href="Index.html" class="nav-left">
+                <img src="/htmlpictures/Logo1.png" alt="Uncharted Travel Logo">
+                <h1>Uncharted Travel</h1>
+            </a>
+            
+            <ul class="nav-links" aria-label="Main Navigation">
+                <!-- "Home" link removed to fix redundancy error -->
+                <li><a href="Historical Sites.html">Historical Sites</a></li>
+                <li><a href="Cultural insights.html">Cultural Insights</a></li>
+                <li><a href="Travel Tips.html">Travel Tips</a></li>
+                <li><a href="About us.html">About us</a></li>
+                <li><a href="Contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+        <div class="text-box">
+            <h1>Historical Sites of Taxila</h1>
+            <p>Explore the Ancient Ruins and Monuments</p>
+            <a href="#sites" class="head-btn">Explore Sites</a>
+        </div>
+    </header>
+
+    <div class="container" id="sites">
+        <section class="section">
+            <h2>Explore the Ancient Ruins</h2>
+            <p>Taxila is home to numerous historical sites, including:</p>
+            <ul>
+                <li>Taxila Museum</li>
+                <li>Dharmarajika Stupa</li>
+                <li>Sirkap and Jaulian Monastery</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Dharmarajika Stupa and Monastery</h2>
+            <p> 
+                The oldest and greatest Buddhist complex, Dharmarajika stupa, also known as Chir Tope, is located on an eastern path along the Tamra stream, south of Hathial, approximately three km from the Taxila Museum. 
+                The name Dharmarajika derives from the fact that the stupa was built on Gautama Buddha's body remnants, the genuine Dharmaraja.
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika.jpeg" alt="Dharmarajika History Board"></div>
+                <div class="gallery-item"><img src="htmlpictures/der-stupa-Complex Map.jpg" alt="Map of Stupa"></div>
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika stupa 2.jpg" alt="Dharmarajika Stupa"></div>
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika_stupa_&_Monastery_Taxila.jpg" alt="Monastery"></div>
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika supra.jpg" alt="Supra"></div>
+            </div>
+
+            <p>
+                The main stupa has a circular layout, 131 feet in diameter, with a 45-foot-high drum. Several items were excavated from Dharmarajika Stupa and are now preserved in the Taxila Museum. 
+                In 1917, a casket with Lord Buddha's remains was discovered here.
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika Stupa with monks.jpg" alt="Monks"></div>
+                <div class="gallery-item"><img src="htmlpictures/Dharmarajika Stupa and Monastaries 2.jpg" alt="Ruins"></div>
+                <div class="gallery-item"><img src="htmlpictures/Stupa.jpg" alt="Stupa"></div>
+                <div class="gallery-item"><img src="htmlpictures/Stupa 15.jpeg" alt="Stupa 15"></div>
+                <div class="gallery-item"><img src="htmlpictures/Stupa 16.jpeg" alt="Monastery"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Museum of Taxila</h2>
+            <p>
+                The Taxila Museum exhibits several artefacts, sculptures, and coins from the Gandhara Civilisation. Visitors can view Buddhist relics and sculptures that highlight the region's cultural achievements.
+            </p>
+            <h2>Artifacts in Taxila Museum</h2>
+            <p>
+                The origin of the Taxila Museum lies in the archaeological pursuits of the Archaeological Survey of India (ASI). Sir John Marshall laid the foundation to preserve these precious discoveries.
+            </p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="htmlpictures/Museum entry board.jpg" alt="Entry Board"></div>
+                <div class="gallery-item"><img src="htmlpictures/Taxila Museum 1.jpg" alt="Museum"></div>
+                <div class="gallery-item"><img src="htmlpictures/coins.jpeg" alt="Coins"></div>
+                <div class="gallery-item"><img src="htmlpictures/Museum Lobby.jpeg" alt="Lobby"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 1.jpg" alt="Artifact 1"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 2.jpg" alt="Artifact 2"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 3.jpg" alt="Artifact 3"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 4.jpg" alt="Artifact 4"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 5.jpg" alt="Artifact 5"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 6.jpg" alt="Artifact 6"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 7.jpg" alt="Artifact 7"></div>
+                <div class="gallery-item"><img src="htmlpictures/artifact 8.jpg" alt="Artifact 8"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Jaulian Monastery</h2>
+            <p>
+                Jaulian Monastery, a UNESCO World Heritage site, is an ancient Buddhist monastery complex with intricate stone carvings and relics depicting Buddha's life.
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="htmlpictures/Jaulian-Monastery 1.png" alt="Jaulian 1"></div>
+                <div class="gallery-item"><img src="htmlpictures/Jaulian-Monastery 2.png" alt="Jaulian 2"></div>
+                <div class="gallery-item"><img src="htmlpictures/Jaulian-Monastery 3.png" alt="Jaulian 3"></div>
+                <div class="gallery-item"><img src="htmlpictures/Jaulian-Monastery 4.png" alt="Jaulian 4"></div>
+                <div class="gallery-item"><img src="htmlpictures/Mapping of jaulian monastery 5.png" alt="Map"></div>
+                <div class="gallery-item"><img src="htmlpictures/taxila-ruins-jaulian-monastery-pakistan_134785-20071.avif" alt="Ruins"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sirkap Palace</h2>
+            <p>
+                Sirkap Palace, a 2nd-century BCE archaeological site, was known for its unique grid-style layout and distinctive blend of architectural styles, boasting the iconic Double-Headed Eagle Stupa.
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="htmlpictures/Sirkap the brain chamber.jpeg" alt="Brain Chamber"></div>
+                <div class="gallery-item"><img src="htmlpictures/Double Eagle Headed stupa, Taxila.jpg" alt="Eagle Stupa"></div>
+                <div class="gallery-item"><img src="htmlpictures/Taxila-Sirkap-Gandhara-2.jpg" alt="Gandhara"></div>
+                <div class="gallery-item"><img src="htmlpictures/Ruins of the Ancient buildings 1, Taxila.jpg" alt="Ruins"></div>
+                <div class="gallery-item"><img src="htmlpictures/sirkap.jpg" alt="Dome"></div>
+                <div class="gallery-item"><img src="htmlpictures/Ruins of the Ancient buildings, Taxila.jpg" alt="Ruins"></div>
+            </div>
+        </section>
+    </div>
+            
+    <footer>
+        <div class="footer-column">
+            <h3>Get latest tour updates</h3>
+            <form action="/submit_form" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <p>
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a> | 
+                <a href="#">Instagram</a>
+            </p>
+            <p style="color:#fff; margin-top:10px;">UnchartedTravels.pk 2024. All rights reserved.</p>
+        </div>
+
+        <div class="footer-column">
+            <address>
+                <h4>Uncharted Travels Private Limited</h4>
+                <p>123 Heritage Lane, Taxila, Pakistan</p>
+                <p><strong>P:</strong> +92 xxxxxxxxxx</p>
+                <p><strong>E:</strong> <a href="mailto:hello@UnchartedTravels.pk">hello@UnchartedTravels.pk</a></p>
+            </address>
+        </div>
+    </footer>
+</body>
+</html>
